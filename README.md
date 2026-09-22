@@ -33,7 +33,7 @@ It provides both active protocol identification and an **OT-Safe mode** designed
 Clone the repository and install dependencies:
 
 ```bash
-git clone [https://github.com/YOUR_USERNAME/ot-scan.git](https://github.com/YOUR_USERNAME/ot-scan.git)
+git clone https://github.com/kvanonckelen/ot-scan.git
 cd ot-scan
 npm install
 npm run build
