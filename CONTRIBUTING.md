@@ -29,13 +29,15 @@ export async function probeYourProtocol(
 }
 ```
 
-2. Respect OT Safety Guidelines
-   🛡️ Safe Mode Mandatory: Every parser MUST handle safe === true by disconnecting immediately after a successful TCP handshake without sending binary payloads.
+### 2. Respect OT Safety Guidelines
+
+🛡️ Safe Mode Mandatory: Every parser MUST handle safe === true by disconnecting immediately after a successful TCP handshake without sending binary payloads.
 
 ⏱️ Timeouts & Cleanups: Always destroy sockets on error, timeout, or completion to avoid leaving orphan TCP connections on sensitive PLCs.
 
-3. Integrate in Scanner
-   Import and invoke your new parser inside src/scanner.ts:
+### 3. Integrate in Scanner
+
+Import and invoke your new parser inside src/scanner.ts:
 
 ```typescript
 const [modbus, opcua, mqtt, s7, yourprotocol] = await Promise.all([
