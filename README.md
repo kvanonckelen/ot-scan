@@ -97,22 +97,3 @@ Submit a Pull Request.
 
 📄 License
 MIT License - free for commercial and non-commercial open-source use.
-
----
-
-## 2. GitHub Repository Opzetten
-
-Volg deze stappen in je terminal om het project op GitHub te zetten:
-
-### Stap A: Een `.gitignore` aanmaken
-
-Zorg dat je geen `node_modules` of tijdelijke bestanden commit. Maak een `.gitignore` bestand aan met:
-
-```text
-node_modules/
-dist/
-*.log
-test-servers.js
-assets.json
-assets.csv
-```
