@@ -32,33 +32,47 @@ It provides both active protocol identification and an **OT-Safe mode** designed
 
 Clone the repository and install dependencies:
 
-````bash
+```bash
 git clone [https://github.com/YOUR_USERNAME/ot-scan.git](https://github.com/YOUR_USERNAME/ot-scan.git)
 cd ot-scan
 npm install
 npm run build
+```
+
 Link the executable globally (optional):
 
-Bash
+```bash
 npm link
+```
+
 📖 Usage Examples
+
 1. Basic Scan on a Subnet
-Scan a /24 subnet using default active probes:
+   Scan a /24 subnet using default active probes:
 
-Bash
+```bash
 npx ot-scan -t 192.168.1.0/24
-2. OT-Safe Production Scan (Recommended for Live Plants)
-Use --safe mode with a 100ms delay between hosts to ensure zero binary packet injection on sensitive PLCs:
+```
 
-Bash
+2. OT-Safe Production Scan (Recommended for Live Plants)
+   Use --safe mode with a 100ms delay between hosts to ensure zero binary packet injection on sensitive PLCs:
+
+```bash
 npx ot-scan -t 10.10.20.0/24 --safe --delay 100
+```
+
 3. Export Results to JSON or CSV
-Bash
+
+```bash
 # Export to JSON file
 npx ot-scan -t 192.168.1.0/24 -o json -f assets.json
+```
 
+```bash
 # Export to CSV file
 npx ot-scan -t 192.168.1.0/24 -o csv -f assets.csv
+```
+
 🛡️ OT Safety Guidelines
 Staging / FAT Testing First: Always test active scanning in a non-production staging or Factory Acceptance Testing (FAT) environment if available.
 
@@ -69,6 +83,8 @@ Notify Plant Personnel: Ensure SCADA/HMI operators are aware prior to running ac
 🤝 Contributing
 Contributions are welcome! If you'd like to add support for additional protocols (such as EtherNet/IP CIP, BACnet, or PROFINET):
 
+---
+
 Fork the Repository.
 
 Create a new parser under src/parsers/your-protocol.ts.
@@ -77,9 +93,10 @@ Integrate the probe in src/scanner.ts.
 
 Submit a Pull Request.
 
+---
+
 📄 License
 MIT License - free for commercial and non-commercial open-source use.
-
 
 ---
 
@@ -88,6 +105,7 @@ MIT License - free for commercial and non-commercial open-source use.
 Volg deze stappen in je terminal om het project op GitHub te zetten:
 
 ### Stap A: Een `.gitignore` aanmaken
+
 Zorg dat je geen `node_modules` of tijdelijke bestanden commit. Maak een `.gitignore` bestand aan met:
 
 ```text
@@ -97,4 +115,4 @@ dist/
 test-servers.js
 assets.json
 assets.csv
-````
+```
